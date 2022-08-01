@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+    @livewire('show-posts')
     @livewireScripts
 </body>
 </html>

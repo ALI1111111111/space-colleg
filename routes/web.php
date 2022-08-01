@@ -21,5 +21,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function () {
-    Route::get('/working','CourseController@index');
+    Route::get('/regist','StudentController@store');
+    Route::resource('course', CourseController::class);
+    Route::get('/course/show/{id}','CourseController@show');
+
+
 });

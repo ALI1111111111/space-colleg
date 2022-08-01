@@ -21,6 +21,7 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
     <!-- Scripts -->
+    @livewireStyles
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -49,20 +50,7 @@
 
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Students
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url('working') }}">
-                                    Register
-                                </a>
-
-
-                            </div>
-                        </li>
+                       @include('layouts.dropdown')
                     @endguest
                     </ul>
 
@@ -110,6 +98,8 @@
             @yield('content')
         </main>
     </div>
+    @livewireScripts
+
 </body>
 
 </html>

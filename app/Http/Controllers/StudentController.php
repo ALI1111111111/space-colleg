@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\course;
+use App\Models\student;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class CourseController extends Controller
     public function index()
     {
         //
-        return view('course.index');
+
     }
 
     /**
@@ -26,8 +26,6 @@ class CourseController extends Controller
     public function create()
     {
         //
-
-
     }
 
     /**
@@ -39,30 +37,29 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //
-        echo "Yu can store";
+        return view('student.register');
+
 
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\course  $course
+     * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(course $course,$data,Request $request)
-{
-
-    return $data;
-    //
+    public function show(student $student)
+    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\course  $course
+     * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(course $course)
+    public function edit(student $student)
     {
         //
     }
@@ -71,10 +68,10 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\course  $course
+     * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, course $course)
+    public function update(Request $request, student $student)
     {
         //
     }
@@ -82,10 +79,10 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\course  $course
+     * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(course $course)
+    public function destroy(student $student)
     {
         //
     }

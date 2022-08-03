@@ -2,7 +2,17 @@
     <table class="table">
         <caption>Total Course
 {{$test}}
+<div>
+    {{-- {{ $message }} --}}
 
+<select multiple>
+    <option>helo </option>
+    <option> hello</option>
+    <option>hello </option>
+
+</select>
+
+</div>
         </caption>
         <thead>
           <tr>
@@ -35,7 +45,7 @@
 
 </tr>
             @endforelse
-            
+
 
 
         </tbody>

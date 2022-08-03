@@ -15,7 +15,7 @@ class ShowPosts extends Component
     {
         $this->name = null;
         $this->duration = null;
-        $this->course_fee =null;
+        $this->fee =null;
     }
     public function store()
     {
@@ -33,7 +33,9 @@ class ShowPosts extends Component
         $stor->course_fee = $this->fee;
         $stor->save();
         $this->resetInput();
-        return redirect()->to('/course');
+        $this->emit('postAdded');
+
+        // return redirect()->to('/course');
     }
 
     public function render()

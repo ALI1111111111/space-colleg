@@ -1,4 +1,5 @@
 import './bootstrap';
+import '../css/w3.css'
 $(function () {
     $('[data-toggle="popover"]').popover()
   })

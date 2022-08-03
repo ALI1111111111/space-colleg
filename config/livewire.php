@@ -54,7 +54,10 @@ return [
     |
     */
 
-    'asset_url' => null,
+    // 'asset_url' => null,
+    'asset_url' => '/space-college/public',
+    // 'asset_url' => '/space-college',
+
 
     /*
     |--------------------------------------------------------------------------

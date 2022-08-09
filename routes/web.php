@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::post('/student/store', 'StudentController@store')->name('/student/store');
+    Route::get('/student', 'StudentController@index');
+
+    Route::resource('course', CourseController::class);
+    Route::get('/course/show/{id}', 'CourseController@show');
+});

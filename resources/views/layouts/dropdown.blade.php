@@ -15,7 +15,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ url('home') }}" class="nav-link"> Courses   </a>
+    <a href="{{ url('course') }}" class="nav-link"> Courses   </a>
     </li>
 
     <li class="nav-item">

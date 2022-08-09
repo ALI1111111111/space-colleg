@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer("transaction_id");
             $table->integer("amount_paid");
-            $table->string("more_info");
+            $table->string("more_info")->nullable();
             $table->timestamps();
         });
     }

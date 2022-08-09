@@ -22,9 +22,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware('auth')->group(function () {
-    Route::post('/student/store', 'StudentController@store')->name('/student/store');
+
+
+    // Admin student routes
     Route::get('/student', 'StudentController@index');
 
-    Route::resource('course', CourseController::class);
-    Route::get('/course/show/{id}', 'CourseController@show');
+    // Course Routes
+    Route::get('/course','CourseController@index');
+
+
 });

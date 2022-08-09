@@ -32,7 +32,7 @@
                         <option value="AM"> {{$d->course_name}} {{$d->course_fee}}
 
                         @endforeach
-                      AM</option>
+                      </option>
 
                     </select>
 

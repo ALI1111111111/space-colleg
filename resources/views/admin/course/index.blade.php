@@ -2,19 +2,16 @@
 
 @section('content')
 <div class="container">
-
     <div class="row justify-content-center">
-        <div class="col">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header" >
-                    <h3 class="fl-left" style="color:rgb(68, 68, 105);">Students</h3>
+                    <h3 class="fl-left" style="color:rgb(68, 68, 105);">Course</h3>
 
-                      <button type="button" class="btn btn-primary fl-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Add Student
 
-                    </button>
 
-@livewire("student.create")
+{{-- @livewire("course.create") --}}
+@include("admin.course.create")
 
                 </div>
 
@@ -25,9 +22,9 @@
                         </div>
                     @endif
 
-
+                    {{-- {{ __('You are logged in!') }} --}}
                     <!-- Button trigger modal -->
-                    @livewire('student.index')
+                    @livewire("course.index")
 
 
 

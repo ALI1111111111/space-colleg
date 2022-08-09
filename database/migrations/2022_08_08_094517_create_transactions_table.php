@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string("course_status");
             $table->string("payment_status");
             $table->date("payment_due_date");
-            $table->string("more_info");
+            $table->string("more_info")->nullable();
 
             $table->timestamps();
         });

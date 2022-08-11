@@ -1,29 +1,40 @@
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+<div>
+
+    <input type="text" placeholder="Search result with name or Serial_number" class="form-control" wire:model="search"
+        value="{{ $search }}">
+    <table class="table">
+        <thead>
+            <div class="clearfix"></div>
+
+
+            <tr>
+                <th scope="col">Serial</th>
+                <th scope="col">Name</th>
+                <th scope="col">Father</th>
+                <th scope="col">Due Fees</th>
+                <th scope="col"> Learning-status </th>
+                <th scope="col"> More_info </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($stud as $row)
+                <tr>
+                    {{-- {{$row}} --}}
+                    <td> {{ $row->id }} </td>
+                    <td> {{ $row->f_name }} </td>
+                    <td>{{ $row->father }}</td>
+                    <td>{{$row->total_sales.$row->deposit_fee }}</td>
+                    <td> {{$row->course_status }} </td>
+                </tr>
+            @empty
+            @endforelse
+
+
+        </tbody>
+    </table>
+    {{-- {{$title->links()}} --}}
+
+
+</div>

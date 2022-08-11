@@ -9,12 +9,7 @@
                 <div class="card-header" >
                     <h3 class="fl-left" style="color:rgb(68, 68, 105);">Students</h3>
 
-                      <button type="button" class="btn btn-primary fl-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        Add Student
-
-                    </button>
-
-@livewire("student.create")
+                     @include("student.create")
 
                 </div>
 
@@ -24,19 +19,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
+@livewire('student.index')
 
 
-                    <!-- Button trigger modal -->
-                    @livewire('student.index')
 
 
+
+
+                    </div>
+                </div>
+              </div>
 
 
 
 
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+
 @endsection

@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function () {
 
     // Admin student routes
     Route::get('/student', 'StudentController@index');
+    Route::get('/student/{id}', 'StudentController@show');
+
 
     // Course Routes
     Route::get('/course','CourseController@index');

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer("course_id");
             $table->date("adm_date");
             $table->string("course_status");
+            $table->string("deposit_fee");
             $table->string("payment_status");
             $table->date("payment_due_date");
             $table->string("more_info")->nullable();

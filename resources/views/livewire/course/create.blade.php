@@ -11,7 +11,7 @@
 
           <div class="row">
               <div class="col">
-                  <input required wire:model.defer="course_name" type="text"  class="form-control" name="course_name" placeholder="Enter course Name*" required >
+                  <input required wire:model="course_name" type="text"  class="form-control" name="course_name" placeholder="Enter course Name*" required >
                   {{$course_name}}
 
               </div>

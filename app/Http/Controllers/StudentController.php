@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\student;
+use App\Models\Transaction;
+use App\Models\course;
+use App\Models\payment;
+
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -42,13 +46,15 @@ class StudentController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     ** @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(student $student)
+    public function show(student $student,$id)
     {
         //
+$course_data = course::all();
+        return view('student.profile',['course_data' =>$course_data]);
     }
 
     /**
@@ -57,7 +63,7 @@ class StudentController extends Controller
      * @param  \App\Models\student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(student $student)
+    public function edit(student $student,)
     {
         //
     }

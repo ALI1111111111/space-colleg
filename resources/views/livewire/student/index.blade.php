@@ -22,11 +22,13 @@
             @forelse ($stud as $row)
                 <tr>
                     {{-- {{$row}} --}}
-                    <td> {{ $row->id }} </td>
+                    <td> {{ $row->sid }} </td>
                     <td> {{ $row->f_name }} </td>
                     <td>{{ $row->father }}</td>
-                    <td>{{$row->total_sales.$row->deposit_fee }}</td>
+                    <td>{{$row->course_fee-$row->deposit_fee}}</td>
                     <td> {{$row->course_status }} </td>
+                    <td> <a class="btn btn-primary" href="{{ url('student', ['id' => $row['sid']]) }}">profile </a>
+                        </td>
                 </tr>
             @empty
             @endforelse
@@ -34,7 +36,7 @@
 
         </tbody>
     </table>
-    {{-- {{$title->links()}} --}}
+    {{$stud->links()}}
 
 
 </div>

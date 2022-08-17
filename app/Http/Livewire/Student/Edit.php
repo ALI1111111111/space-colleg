@@ -9,19 +9,27 @@ use Livewire\Component;
 
 class Edit extends Component
 {
-    public $course_id,$student;
+    public $course_data='',$search='',$data;
 
-    public function increasing(){
-$this->student = course::where('id',$this->course_id)->get();
-// $this->course_id= null;
+    public function increasing($id){
+        // $this->course_data = course::where('course_name', 'like', '%' . $this->search . '%')->get();
 
-
+$this->data= student::where('id',$id)->get();
     }
 
 
     public function render()
     {
-        $this->course_data = course::all();
-        return view('livewire.student.edit');
+        if($this->search==''){
+            $this->course_data= '';
+        }else{
+            $this->course_data = student::where('students.f_name', 'like', '%' . $this->search . '%')
+            // ->join('transactions','students.id','=','transactions.student_id')
+            ->get();
+
+        }
+
+
+            return view('livewire.student.edit');
     }
 }

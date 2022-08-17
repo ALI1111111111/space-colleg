@@ -1,12 +1,36 @@
 <div>
-    <select  required  wire:model="course_id" class="form-select" wire:click="increasing()" aria-label="Default select example">
-        <option value="">Select course</option>
-        @foreach ($course_data as $d)
-        <option  required value="{{$d->id}}"> {{$d->course_name}} {{$d->course_fee}}
+
+
+     <input placeholder="Search something....."  type="text" wire:model="search" class="form-control">
+
+
+
+@if (empty($course_data))
+
+@else
+@foreach ($course_data as $d)
+
+{{-- wire:click="increasing({{$d->id}})"> --}}
+<a class="btn " href="{{ url('student', ['id' => $d['id']]) }}">{{$d->f_name}}</a><br>
+
+
 
         @endforeach
-      </option>
+@endif
 
-    </select>
-{{$student}}
+
+
+
+@if (empty($data))
+
+@else
+@foreach ($data as $d)
+<input type="text" value="{{$d->father}}" >
+
+
+@endforeach
+
+@endif
+{{-- {{$course_data}} --}}
+
 </div>

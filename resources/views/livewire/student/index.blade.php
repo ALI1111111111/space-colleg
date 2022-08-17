@@ -27,7 +27,10 @@
                     <td>{{ $row->father }}</td>
                     <td>{{$row->course_fee-$row->deposit_fee}}</td>
                     <td> {{$row->course_status }} </td>
-                    <td> <a class="btn btn-primary" href="{{ url('student', ['id' => $row['sid']]) }}">profile </a>
+                    <td>
+                         {{-- <a class="btn btn-primary" href="{{ url('/student?search=', ['search' => $row['f_name']]) }}">profile </a> --}}
+
+                <a class="btn btn-primary" href="/student/{{$row->sid}}?search={{$row->f_name}}">profile </a>
                         </td>
                 </tr>
             @empty

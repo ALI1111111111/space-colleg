@@ -11,7 +11,7 @@
 @foreach ($course_data as $d)
 
 {{-- wire:click="increasing({{$d->id}})"> --}}
-<button class="btn" wire:click="increasing({{$d->id}})" >{{$d->f_name}}</button>
+<button class="btn btn-primary" wire:click="increasing({{$d->id}})" >{{$d->f_name}}</button>
 {{-- <a class="btn " href="{{ url('student', ['id' => $d['id']]) }}">{{$d->f_name}}</a><br> --}}
 
 
@@ -26,14 +26,14 @@
 
 @else
 @foreach ($data as $d)
-{{$data}}
+
 <div class="row">
     <div class="col">
-        <input  type="text"  class="form-control" name="f-name" placeholder="Enter full Name"   >
+        <input  type="text" value="{{$d->f_name}}" class="form-control" name="f-name" placeholder="Enter full Name"   >
 {{-- {{$f_name}} --}}
     </div>
     <div class="col">
-        <input type="text"  class="form-control" name="father" placeholder="Enter Father Name"  >
+        <input type="text" value="{{$d->father}}"   class="form-control" name="father" placeholder="Enter Father Name"  >
 
     </div>
 
@@ -53,9 +53,9 @@
 
 
     </div>
-    <div class="col">
+    {{-- <div class="col">
         <input    type="number" name="fee" class="form-control" placeholder="Deposit-Fee">
-    </div>
+    </div> --}}
 
 </div>
 <div class="clearfix" style="visibility: hidden" >.</div>
@@ -64,11 +64,11 @@
 <div class="col">
 <label  style="visibility: hidden"  for="adm">cnic</label>
 
-<input  type="number" name="cnic" placeholder="Enter cnic" class="form-control">
+<input value="{{$d->cnic}}"  type="number" name="cnic" placeholder="Enter cnic" class="form-control">
 </div>
 <div class="col">
 <label  for="adm">Admmission_date</label>
-<input    type="date" id="adm" name="adm_date" class="form-control">
+<input value="{{$d->Adm_date}}"   type="date" id="adm" name="adm_date" class="form-control">
 </div>
 </div>
 <div class="clearfix" style="visibility: hidden" >.</div>
@@ -76,7 +76,7 @@
 <div class="row">
 <div class="col">
 <select   class="form-select" aria-label="Default select example">
-<option value="">Select Timming</option>
+<option value="{{$d->class_time}}">{{$d->class_time}} </option>
 <option value="1 - 2">1 - 2 </option>
 <option value="2 - 3">2 - 3</option>
 <option value="3 - 4">3 - 4</option>
@@ -104,13 +104,13 @@
 <div class="row">
 <div class="col">
 <label for="birth">Enter Date of Birth</label>
-<input   id="birth" type="date" name="birth" class="form-control">
+<input value="{{$d->birth}}"  id="birth" type="date" name="birth" class="form-control">
 </div>
 <div class="col">
 <label  style="visibility: hidden"  for="adm">Select gender</label>
 
 <select    class="form-select" aria-label="Default select example">
-<option value="">Gender</option>
+<option value="{{$d->gender}}">{{$d->gender}}</option>
 <option  value="male">Male</option>
 <option value="female">Female</option>
 </select>
@@ -121,18 +121,64 @@
 
 <div class="row">
 <div class="col">
-<input   placeholder="Enter Address" type="text" name="address" class="form-control" >
+<input value="{{$d->address}}"  placeholder="Enter Address" type="text" name="address" class="form-control" >
 </div>
 <div class="col">
-<input  type="text" name="more_info" placeholder="More_info" class="form-control">
+<input value="{{$d->more_info}}" type="text" name="more_info" placeholder="More_info" class="form-control">
 </div>
 </div>
 
-</div>
+
+
 
 @endforeach
 
 @endif
+
+<div class="table-responsive">
+
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Course_Fee</th>
+        <th scope="col">Deposit Fee</th>
+    <th scope="col">Amount-Paid</th>
+    <th scope="col">paid date</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        @if (empty($data))
+
+        @else
+
+        @foreach ($data as $d)
+  <tr>
+
+      <th scope="row">1</th>
+      <td>{{$d->course_name}}</td>
+      <td>{{$d->course_fee}}</td>
+      <td>{{$d->deposit_fee}}</td>
+
+
+      <td>{{$d->amount_paid}}</td>
+      <td></td>
+
+    </tr>
+
+    @endforeach
+
+       @endif
+
+
+
+
+    </tbody>
+  </table>
+</div>
 {{-- {{$course_data}} --}}
 
 </div>

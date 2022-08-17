@@ -11,7 +11,7 @@ class Edit extends Component
 {
     public $course_data='',$search='',$data;
     protected $queryString = ['search'];
- 
+
 
     public function increasing($id){
         // $this->course_data = course::where('course_name', 'like', '%' . $this->search . '%')->get();

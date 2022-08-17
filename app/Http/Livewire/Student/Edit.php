@@ -10,11 +10,18 @@ use Livewire\Component;
 class Edit extends Component
 {
     public $course_data='',$search='',$data;
+    protected $queryString = ['search'];
+ 
 
     public function increasing($id){
         // $this->course_data = course::where('course_name', 'like', '%' . $this->search . '%')->get();
 
-$this->data= student::where('id',$id)->get();
+$this->data= student::join("transactions",'students.id','=','transactions.id')
+->join('courses','transactions.course_id','=','courses.id')
+->join('payments','transactions.id','=','payments.transaction_id')
+->where('students.id',$id)->get();
+$this->course= course::all();
+
     }
 
 

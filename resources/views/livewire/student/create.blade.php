@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col">
                             <input wire:model="f_name" type="text"  class="form-control" name="f-name" placeholder="Enter full Name" required >
-        {{$f_name}}
+        {{-- {{$f_name}} --}}
                         </div>
                         <div class="col">
                             <input type="text" wire:model.defer="father"  class="form-control" name="father" placeholder="Enter Father Name" required>

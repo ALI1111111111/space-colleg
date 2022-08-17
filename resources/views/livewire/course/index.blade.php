@@ -42,7 +42,8 @@
                         {{$row->more_info}}
                     </td>
 
-                <td><button wire:click="destroy({{$row->id}})" class="btn btn-sm btn-outline-danger py-0">Delete</button>
+                <td>
+                    {{--  <button wire:click="destroy({{$row->id}})" class="btn btn-sm btn-outline-danger py-0">Delete</button> --}}
 
                     <button  wire:click="edit({{$row->id}})"  type="button" class="btn btn-sm btn-outline-primary py-0" >
                         edit

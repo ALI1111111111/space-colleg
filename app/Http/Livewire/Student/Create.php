@@ -59,7 +59,7 @@ class Create extends Component
     //    store Transaction datab
     $st_id = DB::table('students')
     ->orderBy('id', 'desc')
-    ->first();
+    ->first() ;
     $this->emit('user_registerd');
 
 $tran= new Transaction();

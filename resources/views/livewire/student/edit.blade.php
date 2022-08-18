@@ -38,8 +38,8 @@
     </div>
 
 </div>
-<div class="clearfix" style="visibility: hidden" >.</div>
-<div class="row">
+{{-- <div class="clearfix" style="visibility: hidden" >.</div> --}}
+{{-- <div class="row">
     <div class="col">
         <select     class="form-select" aria-label="Default select example">
             <option>{{$d->course_name}}</option>
@@ -53,11 +53,11 @@
 
 
     </div>
-    {{-- <div class="col">
+     <div class="col">
         <input    type="number" name="fee" class="form-control" placeholder="Deposit-Fee">
-    </div> --}}
+    </div>
 
-</div>
+</div> --}}
 <div class="clearfix" style="visibility: hidden" >.</div>
 
 <div class="row">
@@ -145,8 +145,12 @@
         <th scope="col">Course Name</th>
         <th scope="col">Course_Fee</th>
         <th scope="col">Deposit Fee</th>
-    <th scope="col">Amount-Paid</th>
-    <th scope="col">paid date</th>
+        <th scope="col">Due-Fee</th>
+
+        <th scope="col">Admission Date</th>
+
+    {{-- <th scope="col">Amount-Paid</th> --}}
+    {{-- <th scope="col">paid date</th> --}}
 
       </tr>
     </thead>
@@ -159,13 +163,24 @@
   <tr>
 
       <th scope="row">1</th>
-      <td>{{$d->course_name}}</td>
+      {{-- <td>{{$d->course_name}}</td> --}}
+      <td scope="col">  <select     class="form-select" aria-label="Default select example">
+        <option>{{$d->course_name}}</option>
+        @foreach ($course as $c_d)
+        <option   value="{{$c_d->id}}"> {{$c_d->course_name}} {{$c_d->course_fee}}
+
+        @endforeach
+      </option>
+
+    </select></td>
       <td>{{$d->course_fee}}</td>
       <td>{{$d->deposit_fee}}</td>
+      <td> {{$d->course_fee- $d->deposit_fee}}   </td>
+      <td>{{$d->Adm_date}}</td>
 
 
-      <td>{{$d->amount_paid}}</td>
-      <td></td>
+      {{-- <td>{{$d->amount_paid}}</td>
+      <td></td> --}}
 
     </tr>
 

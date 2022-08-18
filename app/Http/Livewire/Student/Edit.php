@@ -18,7 +18,7 @@ class Edit extends Component
 
 $this->data= student::join("transactions",'students.id','=','transactions.id')
 ->join('courses','transactions.course_id','=','courses.id')
-->join('payments','transactions.id','=','payments.transaction_id')
+// ->join('payments','transactions.id','=','payments.transaction_id')
 ->where('students.id',$id)->get();
 $this->course= course::all();
 

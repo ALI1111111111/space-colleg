@@ -424,7 +424,7 @@
 
         <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-               <h5> Space Computer College kamalia  </h5>
+               <h1 class="text-danger"> Space Computer College kamalia  </h1>
             </div>
 
 

@@ -19,6 +19,6 @@
     </li>
 
     <li class="nav-item">
-        <a href="{{ url('home') }}" class="nav-link"> Add Fee   </a>
+        @include("student.addfee")
         </li>
 

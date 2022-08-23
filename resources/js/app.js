@@ -19,3 +19,5 @@ window.onclick = function(event) {
     add_fee.style.display = "none";
   }
 }
+
+
